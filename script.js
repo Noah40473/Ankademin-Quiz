@@ -1,6 +1,6 @@
 var myQuestions = [
 	{
-		question: "Är Jorden plat?",
+		question: "Är Jorden platt?",
 		answers: {
 			a: 'Ja',
 			b: 'Nej',
@@ -34,16 +34,16 @@ var myQuestions = [
 		correctAnswer: 'b'
 	},
 	{
-		question: "Har en trianel 3 hörn?",
+		question: "Har en triangel 3 hörn?",
 		answers: {
-			a: 'JA',
+			a: 'Ja',
 			b: 'Nej',
 			
 		},
 		correctAnswer: 'a'
 	},
 	{
-		question: "Är jordens omloppsbana runt pluto?",
+		question: "Är jordens omloppsbana runt Pluto?",
 		answers: {
 			a: 'Ja',
 			b: 'Nej',
@@ -67,7 +67,7 @@ var myQuestions = [
 		correctAnswer: 'a'
 	},
 	{
-		question: "Är ankademin en bra skola?",
+		question: "Är Ankademin en bra skola?",
 		answers: {
 			a: 'Ja',
 			b: 'Nej',
