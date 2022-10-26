@@ -16,79 +16,78 @@ var myQuestions = [
 		correctAnswer: 'a'
 	},
 	{
-		question: "What is 10/2?",
+		question: "Är pizza gott?",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
+			a: 'Ja',
+			b: 'Nej',
+			
+		},
+		correctAnswer: 'a'
+	},
+	{
+		question: "Har en rektangel 6 hörn?",
+		answers: {
+			a: 'Ja',
+			b: 'Nej',
+			
 		},
 		correctAnswer: 'b'
 	},
 	{
-		question: "What is 30/3?",
+		question: "Har en trianel 3 hörn?",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '10'
+			a: 'JA',
+			b: 'Nej',
+			
 		},
-		correctAnswer: 'c'
-	},{
-		question: "What is 10/2?",
+		correctAnswer: 'a'
+	},
+	{
+		question: "Är jordens omloppsbana runt pluto?",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
+			a: 'Ja',
+			b: 'Nej',
 		},
 		correctAnswer: 'b'
 	},
 	{
-		question: "What is 30/3?",
+		question: "Är solen den största planeten?",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '10'
-		},
-		correctAnswer: 'c'
-	},{
-		question: "What is 10/2?",
-		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
+			a: 'Ja',
+			b: 'Nej',
 		},
 		correctAnswer: 'b'
 	},
 	{
-		question: "What is 30/3?",
+		question: "Är Lionel Messi bättre än Cristiano Ronaldo?",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '10'
+			a: 'Ja',
+			b: 'Nej',
 		},
-		correctAnswer: 'c'
-	},{
-		question: "What is 10/2?",
-		answers: {
-			a: '3',
-			b: '5',
-			c: '115'
-		},
-		correctAnswer: 'b'
+		correctAnswer: 'a'
 	},
 	{
-		question: "What is 30/3?",
+		question: "Är ankademin en bra skola?",
 		answers: {
-			a: '3',
-			b: '5',
-			c: '10'
+			a: 'Ja',
+			b: 'Nej',
 		},
-		correctAnswer: 'c'
+		correctAnswer: 'a'
+	},
+	{
+		question: "Är kodning roligt?",
+		answers: {
+			a: 'Ja',
+			b: 'Nej',
+		},
+		correctAnswer: 'a'
 	},
 ];
 
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
+var restartButton = document.getElementById('restart');
 const darkmodeButton = document.getElementById('dark-mode')
 
 darkmodeButton.addEventListener('click', toggelDarkMode)
@@ -101,9 +100,9 @@ function toggelDarkMode() {
     element.classList.toggle('container-dark')
   }
 
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton, restartButton);
 
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton, restartButton){
 
 	function showQuestions(questions, quizContainer){
 		// vi behöver en plats för att lagra output och svarsalternativ
@@ -177,14 +176,17 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 		if(numCorrect >= 7)
 		{
 			resultsContainer.style.color ='lightgreen';
+			alert("Grattis, Mycket väl godkänt!!");
 		}
-		else if(numCorrect>=4)
+		else if(numCorrect>=5)
 		{
 			resultsContainer.style.color ='orange';
+			alert("Det gick okej, Godkänt!!");
 		}
 		else
 		{
 			resultsContainer.style.color ='red';
+			alert("Underkänt, bättre lycka nästa gång!!");
 		}
 		// visa antalet rätta svar
 		resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
@@ -197,5 +199,6 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 	submitButton.onclick = function(){
 		showResults(questions, quizContainer, resultsContainer);
 	}
-
+	
+	
 }
