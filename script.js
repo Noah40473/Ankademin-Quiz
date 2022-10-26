@@ -157,22 +157,36 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 			userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
 			
 			// om svaret är rätt
-			if(userAnswer===questions[i].correctAnswer){
+			if(userAnswer===questions[i].correctAnswer)
+			{
 				// lägg till antalet korrekta svar
-				numCorrect++;
-				
+				numCorrect++;				
 				// färga svaren gröna
 				answerContainers[i].style.color = 'lightgreen';
 			}
 			// om svaret är fel eller tomt
-			else{
+			else
+			{
 				// färga svaren röda
 				answerContainers[i].style.color = 'red';
 			}
 			
 		}
 
-		// visa antalet rätta svar av totalt
+		// visa antalet rätta svar med hjälp av färger
+		if(numCorrect >= 7)
+		{
+			resultsContainer.style.color ='lightgreen';
+		}
+		else if(numCorrect>=4)
+		{
+			resultsContainer.style.color ='orange';
+		}
+		else
+		{
+			resultsContainer.style.color ='red';
+		}
+		// visa antalet rätta svar
 		resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
 	}
 
