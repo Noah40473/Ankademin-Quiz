@@ -87,7 +87,6 @@ var myQuestions = [
 var quizContainer = document.getElementById('quiz');
 var resultsContainer = document.getElementById('results');
 var submitButton = document.getElementById('submit');
-var restartButton = document.getElementById('restart');
 const darkmodeButton = document.getElementById('dark-mode')
 
 darkmodeButton.addEventListener('click', toggelDarkMode)
@@ -100,9 +99,9 @@ function toggelDarkMode() {
     element.classList.toggle('container-dark')
   }
 
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton, restartButton);
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
 
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton, restartButton){
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
 	function showQuestions(questions, quizContainer){
 		// vi behöver en plats för att lagra output och svarsalternativ
